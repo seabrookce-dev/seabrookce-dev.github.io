@@ -19,10 +19,19 @@
             const queryValue = urlParams.get("query");
 
             const outputDiv = document.getElementById("resultOutput");
-            //do ` instead of ''
-            outputDiv.innerHTML = `
-                <p>Query value: ${queryValue}</p>
+            if(queryValue) {
+                //do ` instead of ''
+                outputDiv.innerHTML = `
+                    <p>Query value: ${queryValue}</p>
             `;
+            }
+            else {
+                outputDiv.innerHTML = `
+                    <p>Go back to previous page to input data</p>
+                    <a href="lab3.html">Bac</a>
+                `;
+            }
+            
         </script>
     </body>
 </html>
