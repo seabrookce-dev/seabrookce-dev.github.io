@@ -12,16 +12,17 @@
         </div>
 
         <script>
+            //after each const, add a semicolon
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             //Query here is from the lab3.html form
             const queryValue = urlParams.get("query");
 
-            const outputDiv = document.getElementById("resultOutput")
+            const outputDiv = document.getElementById("resultOutput");
 
-            outputDiv.innerHTML = '
-            <p>Loaded</p>
-            '
+            outputDiv.innerHTML = `
+                <p>Loaded</p>
+            `;
         </script>
     </body>
 </html>
