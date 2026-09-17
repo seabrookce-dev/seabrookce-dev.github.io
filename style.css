@@ -1,5 +1,5 @@
 body {
-    background-color: antiquewhite;
+    background-color: azure;
     font-family: Arial, sans-serif;
     margin: 40px;
     color: gray;
@@ -14,7 +14,11 @@ h1 {
 }
 
 table{
-
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 2px solid gray;
 }
 
 th, td {
