@@ -1,17 +1,25 @@
 <!DOCTYPE html>
+<!--
+rework this code to represent a bank account
+it should have two buttons, one to deposit, one to withdraw
+
+in the javascript, create 2 functions, one to deposit, one to withdraw
+-->
 <html>
     <head>
         <title>Javascript Example</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="player-card">
-            <h2>Player Status</h2>
+        <div id="Bank-Account">
+            <p class="Bank-Account">Welcome to Bank of America</p>
 
-            <p>HP: <span id="health-display">100</span></p>
-            <p id="status-message">Ready for Battle!</p>
+            <h2>Your Bank Account</h2>
 
-            <button onclick="takeDamage()">Take 30 Damage</button>
+            <p>Current Balance: <span id="current-balance">100</span></p>
+            <p id="status-message">Would you like to withdraw?</p>
+
+            <button onclick="withdraw-twenty()">Withdraw $20</button>
         </div>
 
         <script src="script.js"></script>
