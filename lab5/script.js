@@ -8,7 +8,7 @@ function withdraw() {
     const balanceText = document.getElementById("current-balance");
     const statusText = document.getElementById("status-message");
 
-    if(currentBalance > 0)
+    if(accountBalance > 0)
     {
         balanceText.innerText = "Current Balance: $" + currentBalance;
         statusText.innerText = "You've withdrawn $20 from your account!";
@@ -28,12 +28,12 @@ function withdraw() {
 }
 
 function deposit() {
-    accountBalance = accountBalance - depositAmount;
+    accountBalance = accountBalance + depositAmount;
 
     const balanceText = document.getElementById("current-balance");
     const statusText = document.getElementById("status-message");
 
-    if(currentBalance > 0) 
+    if(accountBalance > 0) 
     {
         balanceText.innerText = "Current Balance" + currentBalance;
         statusText.innerText = "You've deposited $20 from your account!";
