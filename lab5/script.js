@@ -10,7 +10,7 @@ function withdraw() {
 
     if(currentBalance > 0)
     {
-        balanceText.innerText = currentBalance;
+        balanceText.innerText = "Current Balance: $" + currentBalance;
         statusText.innerText = "You've withdrawn $20 from your account!";
     }
     else
@@ -35,7 +35,7 @@ function deposit() {
 
     if(currentBalance > 0) 
     {
-        balanceText.innerText = currentBalance;
+        balanceText.innerText = "Current Balance" + currentBalance;
         statusText.innerText = "You've deposited $20 from your account!";
 
 
