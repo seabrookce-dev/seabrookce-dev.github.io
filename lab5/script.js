@@ -2,7 +2,7 @@ let accountBalance = $100;
 const withdrawAmount = $20;
 const depositAmount = $20
 
-function withdrawAmount() {
+function withdraw() {
     accountBalance = accountBalance - withdrawAmount;
 
     const balanceText = document.getElementById("current-balance");
@@ -27,7 +27,7 @@ function withdrawAmount() {
     }
 }
 
-function depositAmount() {
+function deposit() {
     accountBalance = accountBalance - depositAmount;
 
     const balanceText = document.getElementById("current-balance");
