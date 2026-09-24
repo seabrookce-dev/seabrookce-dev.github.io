@@ -1,5 +1,6 @@
 let accountBalance = $100;
 const withdrawAmount = $20;
+const depositAmount = $20
 
 function withdrawAmount() {
     accountBalance = accountBalance - withdrawAmount;
@@ -37,7 +38,7 @@ function depositAmount() {
         balanceText.innerText = currentBalance;
         statusText.innerText = "You've deposited $20 from your account!";
 
-        
+
     }
 
 }
