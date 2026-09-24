@@ -1,15 +1,15 @@
-let accountBalance = 100;
-const withdrawAmount = 20;
+let accountBalance = $100;
+const withdrawAmount = $20;
 
-function takeDamage() {
+function withdrawAmount() {
     accountBalance = accountBalance - withdrawAmount;
 
-    const healthText = document.getElementById("current-balance");
+    const balanceText = document.getElementById("current-balance");
     const statusText = document.getElementById("status-message");
 
-    if(playerHealth > 0)
+    if(currentBalance > 0)
     {
-        healthText.innerText = playerHealth;
+        balanceText.innerText = currentBalance;
         statusText.innerText = "You've withdrawn $20 from your account!";
     }
     else
@@ -24,10 +24,18 @@ function takeDamage() {
         document.querySelector("button").disabled = true;
         document.querySelector("button").innerText = "Overdraft";
     }
-
-
-
 }
 
+function depositAmount() {
+    accountBalance = accountBalance - depositAmount;
 
+    const balanceText = document.getElementById("current-balance");
+    const statusText = document.getElementById("status-message");
+
+    if(currentBalance > 0) 
+    {
+        
+    }
+
+}
 
