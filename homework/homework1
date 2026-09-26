@@ -2,17 +2,17 @@
 
 <html lang="en">
     <head>
-        <title>Day 3 Example</title>
+        <title>My Resume</title>
     </head>
 
     <body>
         <header>
-            <h1>Day 3 Example Page</h1>
+            <h1>Claire Seabrook</h1>
             <nav aria-label="Main Navigation">
                 <ul>
-                    <li><a href="cat1">Category 1</a></li>
-                    <li><a href="cat2">Category 2</a></li>
-                    <li><a href="cat3">Category 3</a></li>
+                    <li><a href="cat1">University of South Carolina Honors College</a></li>
+                    <li><a href="cat2">ces55@email.sc.edu</a></li>
+                    <li><a href="cat3">Columbia, SC</a></li>
                 </ul>
             </nav>
         </header>
@@ -21,7 +21,7 @@
             <article>
                 <header>
                     <h2>Article Example</h2>
-                    <p>Published on 8/25/26</p>
+                    <p>Published on 9/25/26</p>
                 </header>
                 <section>
                     <h3>Section Heading Example</h3>
