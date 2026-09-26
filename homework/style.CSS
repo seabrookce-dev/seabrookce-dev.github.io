@@ -21,10 +21,12 @@ table {
 }
 h2 {
     font-size: 20px;
+    justify-content: center;
 }
 
 form {
     font-size: 14px;
+    justify-content: center;
 }
 
 thead {
