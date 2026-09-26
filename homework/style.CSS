@@ -12,7 +12,13 @@ header ul {
   padding: 0;
   color: crimson;
 }
-
+table {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    justify-content: center;
+}
 h2 {
     font-size: 20px;
 }
@@ -21,12 +27,4 @@ form {
     font-size: 14px;
 }
 
-table {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    margin: 0 auto;
-    justify-content: center;
-}
+
