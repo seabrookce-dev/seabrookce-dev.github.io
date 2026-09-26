@@ -1,6 +1,7 @@
 header {
     font-weight: bold;
     text-align: center;
+    color: crimson;
 }
 
 header ul {
@@ -10,3 +11,4 @@ header ul {
   list-style: none;
   padding: 0;
 }
+
