@@ -113,19 +113,96 @@ h2 {
 }
 
 ul {
-  list-style-type: square;
-  padding-left: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
 }
 
 li {
-  padding: 10px;
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-  background-color: #f5f5f5;
-  border-left: 5px solid #73000A;
+  margin-bottom: 10px;
+  padding: 12px 14px;
 
-  border-radius: 4px;
+  background: var(--light-pink);
+
+  border: 2px solid var(--pink);
+  border-left: 6px solid var(--garnet);
+
+  border-radius: 12px;
+
+  text-align: left;
+
+  animation: popIn 0.2s ease;
 }
+
+li span {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Cute checklist box */
+.check-box {
+  appearance: none;
+
+  width: 22px;
+  height: 22px;
+
+  flex: 0 0 22px;
+
+  border: 2px solid var(--garnet);
+  border-radius: 6px;
+
+  background: white;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+/* Checkmark */
+.check-box:checked {
+  background: var(--garnet);
+}
+
+.check-box:checked::after {
+  content: "✓";
+
+  position: absolute;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  left: 3px;
+  top: -1px;
+}
+
+/* Cross out completed items */
+li.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.remove-button {
+  background: #eeeeee;
+  color: var(--garnet);
+
+  padding: 7px 10px;
+
+  font-size: 13px;
+
+  border: 1px solid #ddd;
+}
+
+.remove-button:hover {
+  background: var(--garnet);
+  color: white;
+}
+
 
 .garnet-line {
   height: 5px;
