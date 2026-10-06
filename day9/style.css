@@ -1,171 +1,487 @@
-/* UofSC-inspired colors:
-   Garnet: #73000A
-   Black: #000000
-   White: #FFFFFF
-*/
+/* =========================================
+   ❤️🖤 GAMECOCK GAMEDAY CHECKLIST 🖤❤️
+   ========================================= */
+
+:root {
+  --garnet: #73000a;
+  --dark-garnet: #4a0006;
+  --bright-garnet: #a71930;
+  --pink: #f6d9dd;
+  --light-pink: #fff5f6;
+  --black: #111111;
+  --white: #ffffff;
+  --gold: #f5c542;
+}
+
+
+/* =========================================
+   PAGE BACKGROUND
+   ========================================= */
 
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #ffffff;
+
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+  color: var(--black);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* Garnet gameday background */
+  padding: 40px 15px;
+
+  position: relative;
+  overflow-x: hidden;
+
+  /* Fun garnet background */
   background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.15) 0 6px,
+      transparent 7px
+    ),
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(255, 255, 255, 0.12) 0 8px,
+      transparent 9px
+    ),
+    radial-gradient(
+      circle at 90% 75%,
+      rgba(255, 255, 255, 0.12) 0 5px,
+      transparent 6px
+    ),
     repeating-linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.04) 0px,
-      rgba(255, 255, 255, 0.04) 2px,
-      transparent 2px,
-      transparent 25px
+      rgba(255, 255, 255, 0.035) 0px,
+      rgba(255, 255, 255, 0.035) 3px,
+      transparent 3px,
+      transparent 28px
     ),
     linear-gradient(
       135deg,
-      #3d0006 0%,
+      #3b0005 0%,
       #73000a 45%,
-      #a00012 100%
+      #a71930 100%
     );
 }
 
 
+/* Decorative background footballs */
+
+body::before {
+  content: "🏈";
+
+  position: fixed;
+  top: 25px;
+  left: 30px;
+
+  font-size: 55px;
+
+  transform: rotate(-20deg);
+
+  filter: drop-shadow(3px 4px 0 rgba(0, 0, 0, 0.25));
+
+  opacity: 0.9;
+
+  z-index: 0;
+}
+
+
+body::after {
+  content: "🏈";
+
+  position: fixed;
+  bottom: 25px;
+  right: 30px;
+
+  font-size: 55px;
+
+  transform: rotate(20deg);
+
+  filter: drop-shadow(3px 4px 0 rgba(0, 0, 0, 0.25));
+
+  opacity: 0.9;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
+
 .container {
   width: 90%;
   max-width: 650px;
-  background-color: #ffffff;
-  color: #000000;
+
+  background: var(--white);
+
+  color: var(--black);
 
   padding: 35px;
-  border-radius: 15px;
 
-  border-top: 10px solid #73000A;
-  border-bottom: 10px solid #73000A;
+  border-radius: 28px;
 
-  box-shadow: 0 8px 25px rgba(115, 0, 10, 0.6);
+  position: relative;
+  z-index: 1;
+
+  /* Garnet border */
+  border: 5px solid var(--garnet);
+
+  /* Extra white outline */
+  outline: 4px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(115, 0, 10, 0.6);
+
+  overflow: hidden;
 }
+
+
+/* Little decorative garnet strip */
+
+.container::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 12px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--garnet) 0px,
+      var(--garnet) 25px,
+      var(--black) 25px,
+      var(--black) 50px
+    );
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.football {
+  text-align: center;
+
+  font-size: 58px;
+
+  margin-top: 8px;
+
+  animation: footballBounce 2s ease-in-out infinite;
+}
+
+
+@keyframes footballBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
 
 h1 {
   text-align: center;
-  color: #73000A;
-  font-size: 2.2rem;
-  margin-bottom: 5px;
+
+  color: var(--garnet);
+
+  font-size: 2.7rem;
+
+  margin: 5px 0 0;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  text-shadow: 1px 1px 0 var(--pink);
 }
+
+
+h3 {
+  text-align: center;
+
+  color: var(--black);
+
+  font-size: 1.45rem;
+
+  margin: 3px 0 8px;
+
+  letter-spacing: 1px;
+}
+
 
 .subtitle {
   text-align: center;
-  color: #555555;
+
+  color: #666;
+
   font-style: italic;
+
   margin-bottom: 30px;
+
+  line-height: 1.5;
 }
+
+
+/* =========================================
+   INPUT AREA
+   ========================================= */
 
 label {
   display: block;
+
   font-weight: bold;
-  color: #73000A;
+
+  color: var(--garnet);
+
   margin-bottom: 8px;
+
+  font-size: 1.05rem;
 }
+
 
 .input-area {
   display: flex;
+
   gap: 10px;
 }
 
+
 input {
   flex: 1;
-  padding: 12px;
+
+  padding: 14px;
+
   font-size: 16px;
 
-  border: 2px solid #73000A;
-  border-radius: 6px;
+  font-family: inherit;
 
-  outline: none;
-}
+  border: 2px solid var(--pink);
 
-input:focus {
-  box-shadow: 0 0 5px rgba(115, 0, 10, 0.5);
-}
-
-button {
-  padding: 12px 18px;
-
-  background-color: #73000A;
-  color: #ffffff;
-
-  border: none;
-  border-radius: 6px;
-
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #000000;
-}
-
-h2 {
-  color: #73000A;
-  border-bottom: 3px solid #73000A;
-  padding-bottom: 8px;
-  margin-top: 30px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  margin-bottom: 10px;
-  padding: 12px 14px;
+  border-radius: 14px;
 
   background: var(--light-pink);
 
-  border: 2px solid var(--pink);
-  border-left: 6px solid var(--garnet);
+  outline: none;
 
-  border-radius: 12px;
+  transition: 0.2s;
+}
+
+
+input::placeholder {
+  color: #999;
+}
+
+
+input:focus {
+  border-color: var(--garnet);
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(115, 0, 10, 0.1);
+}
+
+
+/* =========================================
+   ADD TO LIST BUTTON
+   ========================================= */
+
+.input-area button {
+  display: block;
+
+  padding: 14px 18px;
+
+  background: var(--garnet);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-family: inherit;
+
+  font-weight: bold;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0 var(--dark-garnet);
+
+  transition: 0.15s;
+}
+
+
+.input-area button:hover {
+  background: var(--bright-garnet);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 0 var(--dark-garnet);
+}
+
+
+.input-area button:active {
+  transform: translateY(2px);
+
+  box-shadow:
+    0 2px 0 var(--dark-garnet);
+}
+
+
+/* =========================================
+   CHECKLIST TITLE
+   ========================================= */
+
+h2 {
+  color: var(--garnet);
+
+  padding-bottom: 10px;
+
+  margin-top: 32px;
+
+  margin-bottom: 15px;
+
+  border-bottom: 3px dashed var(--pink);
+
+  font-size: 1.5rem;
+}
+
+
+/* =========================================
+   CHECKLIST
+   ========================================= */
+
+ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 20px 0;
+}
+
+
+li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+
+  padding: 13px 14px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--light-pink),
+      #ffffff
+    );
+
+  border: 2px solid var(--pink);
+
+  border-left: 7px solid var(--garnet);
+
+  border-radius: 14px;
 
   text-align: left;
 
   animation: popIn 0.2s ease;
+
+  transition: 0.2s;
 }
+
+
+li:hover {
+  transform: translateX(4px);
+
+  border-color: var(--garnet);
+
+  box-shadow:
+    0 4px 10px rgba(115, 0, 10, 0.12);
+}
+
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
 
 li span {
   flex: 1;
-  font-weight: 500;
+
+  font-weight: 600;
+
+  color: var(--black);
 }
 
-/* Cute checklist box */
+
+/* =========================================
+   CUTE CHECKBOX
+   ========================================= */
+
 .check-box {
   appearance: none;
 
-  width: 22px;
-  height: 22px;
+  width: 23px;
 
-  flex: 0 0 22px;
+  height: 23px;
+
+  flex: 0 0 23px;
 
   border: 2px solid var(--garnet);
-  border-radius: 6px;
+
+  border-radius: 7px;
 
   background: white;
 
   cursor: pointer;
 
   position: relative;
+
+  transition: 0.2s;
 }
 
-/* Checkmark */
+
+.check-box:hover {
+  transform: scale(1.1);
+
+  background: var(--pink);
+}
+
+
 .check-box:checked {
   background: var(--garnet);
+
+  border-color: var(--garnet);
 }
+
 
 .check-box:checked::after {
   content: "✓";
@@ -174,64 +490,167 @@ li span {
 
   color: white;
 
-  font-size: 15px;
+  font-size: 16px;
+
   font-weight: bold;
 
   left: 3px;
+
   top: -1px;
 }
 
-/* Cross out completed items */
+
+/* Completed item */
+
+li.completed {
+  background: #f1f1f1;
+
+  opacity: 0.7;
+}
+
+
 li.completed span {
   text-decoration: line-through;
-  color: #999;
+
+  color: #888;
 }
+
+
+/* =========================================
+   REMOVE BUTTON
+   ========================================= */
 
 .remove-button {
   background: #eeeeee;
+
   color: var(--garnet);
 
   padding: 7px 10px;
 
-  font-size: 13px;
+  font-size: 12px;
+
+  font-family: inherit;
+
+  font-weight: bold;
 
   border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
 }
+
 
 .remove-button:hover {
   background: var(--garnet);
+
   color: white;
+
+  transform: scale(1.05);
 }
 
+
+/* =========================================
+   DECORATIVE LINE
+   ========================================= */
 
 .garnet-line {
-  height: 5px;
-  background-color: #73000A;
+  height: 7px;
+
+  border-radius: 20px;
+
   margin-top: 30px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--garnet) 0px,
+      var(--garnet) 20px,
+      var(--black) 20px,
+      var(--black) 40px
+    );
 }
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
 
 .footer {
   text-align: center;
-  color: #73000A;
-  font-size: 1.3rem;
-  font-weight: bold;
+
+  color: var(--garnet);
+
+  font-size: 1.35rem;
+
+  font-weight: 900;
+
   letter-spacing: 2px;
+
+  margin-bottom: 0;
+
+  margin-top: 18px;
 }
 
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 600px) {
-  .container {
-    padding: 25px;
+
+  body {
+    padding: 25px 10px;
   }
+
+
+  body::before,
+  body::after {
+    font-size: 35px;
+
+    opacity: 0.7;
+  }
+
+
+  .container {
+    width: 90%;
+
+    padding: 25px 18px;
+
+    border-radius: 22px;
+  }
+
 
   .input-area {
     flex-direction: column;
   }
 
-  button {
+
+  .input-area button {
     width: 100%;
   }
 
+
   h1 {
-    font-size: 1.7rem;
+    font-size: 2rem;
+  }
+
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+
+  li {
+    padding: 11px;
+  }
+
+
+  .remove-button {
+    padding: 6px 8px;
+
+    font-size: 11px;
   }
 }
