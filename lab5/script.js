@@ -35,7 +35,7 @@ function deposit() {
 
     if(accountBalance > 0) 
     {
-        balanceText.innerText = "" + accountBalance;
+        balanceText.innerText = "$" + accountBalance;
         statusText.innerText = "You've deposited $20 from your account!";
 
 
