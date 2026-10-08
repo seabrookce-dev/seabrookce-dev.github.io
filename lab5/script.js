@@ -1,6 +1,6 @@
-let accountBalance = $100;
-const withdrawAmount = $20;
-const depositAmount = $20
+let accountBalance = 100;
+const withdrawAmount = 20;
+const depositAmount = 20
 
 function withdraw() {
     accountBalance = accountBalance - withdrawAmount;
