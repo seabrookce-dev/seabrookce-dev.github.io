@@ -1,16 +1,16 @@
-let currentBalance = 100;
+let accountBalance = 100;
 const withdrawAmount = 20;
 const depositAmount = 20
 
 function withdraw() {
     accountBalance = accountBalance - withdrawAmount;
 
-    const balanceText = document.getElementById("current-balance");
+    const balanceText = document.getElementById("account-balance");
     const statusText = document.getElementById("status-message");
 
     if(accountBalance > 0)
     {
-        balanceText.innerText = "Current Balance: $" + currentBalance;
+        balanceText.innerText = "Account Balance: $" + accountBalance;
         statusText.innerText = "You've withdrawn $20 from your account!";
     }
     else
@@ -30,12 +30,12 @@ function withdraw() {
 function deposit() {
     accountBalance = accountBalance + depositAmount;
 
-    const balanceText = document.getElementById("current-balance");
+    const balanceText = document.getElementById("account-balance");
     const statusText = document.getElementById("status-message");
 
     if(accountBalance > 0) 
     {
-        balanceText.innerText = "Current Balance" + currentBalance;
+        balanceText.innerText = "Account Balance" + accountBalance;
         statusText.innerText = "You've deposited $20 from your account!";
 
 
