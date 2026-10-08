@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-med Student Portal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SIDEBAR: PORTAL RESOURCES -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Portal Resources</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="showPage('home')" id="btn-home">Home</button>
+            <button class="nav-btn" onclick="showPage('pathway')" id="btn-pathway">The Pre-Medicine Pathway</button>
+            <button class="nav-btn" onclick="showPage('requirements')" id="btn-requirements">Pre-med Requirements: South Carolina MD Programs</button>
+            <button class="nav-btn" onclick="showPage('mcat')" id="btn-mcat">The MCAT</button>
+        </nav>
+
+        <div class="sidebar-info">
+            <h3>SC Professional Information</h3>
+            <ul>
+                <li><strong>USC Pre-Professional Advising:</strong> Sumwalt College, Suite 102</li>
+                <li><strong>SC Pre-Health Network:</strong> Connecting South Carolina undergrads with medical mentors and clinicians.</li>
+                <li><strong>SC AHEC Program:</strong> Health Careers Program & Pipeline initiatives across South Carolina.</li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-container">
+        <header class="header">
+            <h1>Pre-med Student Portal Dashboard</h1>
+        </header>
+
+        <main class="content">
+
+            <!-- HOMEPAGE -->
+            <section id="page-home" class="page-section active">
+                <div class="motivational-banner">
+                    <h2>Welcome, Future South Carolina Physicians!</h2>
+                    <p>Your journey toward serving patients and building the future of healthcare begins with your undergraduate success.</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="South Carolina Undergrad Students" class="hero-img">
+                    <h2>Empowering South Carolina Pre-Med Undergrads</h2>
+                    <p>Welcome to the <strong>Pre-med Student Portal Dashboard</strong>! Navigating medical school preparation requires dedication, strategic coursework, clinical experience, and effective MCAT planning. This dashboard is built specifically to support undergraduate students in South Carolina with centralized guidance, state-specific requirements, and official resources.</p>
+                    <p>Explore the sidebar links under <strong>Portal Resources</strong> to review South Carolina MD program requirements, pathway milestones, and official MCAT preparation guidelines.</p>
+                </div>
+            </section>
+
+            <!-- PAGE 1: THE PRE-MEDICINE PATHWAY -->
+            <section id="page-pathway" class="page-section">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Medical Pathway" class="hero-img">
+                    <h2>The Pre-Medicine Pathway</h2>
+                    <p>The pre-medicine pathway is a comprehensive preparation journey that balances academic excellence in core science disciplines with practical patient care, leadership, and service activities.</p>
+
+                    <h3>Core Pillars of the Pathway:</h3>
+                    <ul>
+                        <li><strong>Academic Excellence:</strong> Building a strong foundational knowledge base in Biology, Chemistry, Physics, and Biochemistry.</li>
+                        <li><strong>Clinical Experience:</strong> Gaining firsthand patient care exposure through medical scribing, shadowing, EMT roles, or hospital volunteering.</li>
+                        <li><strong>Community Service & Leadership:</strong> Demonstrating compassion, altruism, and active community engagement.</li>
+                        <li><strong>Research Experience:</strong> Developing analytical problem-solving and evidence-based investigation skills.</li>
+                    </ul>
+
+                    <div class="footnotes">
+                        <h4>Footnotes & References:</h4>
+                        <ul>
+                            <li>Pathway information based on the USC Office of Pre-Professional Advising: <a href="https://sc.edu/about/offices_and_divisions/pre_professional_advising/prehealth/premed-pathway/" target="_blank">https://sc.edu/about/offices_and_divisions/pre_professional_advising/prehealth/premed-pathway/</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 2: PRE-MED REQUIREMENTS: SOUTH CAROLINA MD PROGRAMS -->
+            <section id="page-requirements" class="page-section">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80" alt="South Carolina Medical Education" class="hero-img">
+                    <h2>Pre-med Requirements: South Carolina MD Programs</h2>
+                    <p>South Carolina is home to top-tier medical schools. While foundational pre-requisites overlap, each program has specific selection criteria and mission focus areas.</p>
+
+                    <h3>1. Medical University of South Carolina (MUSC) - Charleston</h3>
+                    <p>MUSC evaluates applicants holistically with emphasis on academic preparation, MCAT scores, leadership, and a strong commitment to serving South Carolina's diverse communities. Core coursework includes Biology, General and Organic Chemistry, Physics, and Mathematics/Statistics.</p>
+
+                    <h3>2. USC School of Medicine Greenville</h3>
+                    <p>Emphasizes early clinical integration, lifestyle medicine, and team-based learning. Requirements include general biology, chemistry with lab, physics, and humanities/behavioral science courses.</p>
+
+                    <h3>3. USC School of Medicine Columbia</h3>
+                    <p>Focused on training primary care physicians and addressing healthcare needs across South Carolina, especially in rural and underserved areas. Standard prerequisites include Biology, General and Organic Chemistry, Physics, and English composition.</p>
+
+                    <div class="footnotes">
+                        <h4>Footnotes & References:</h4>
+                        <ul>
+                            <li>MUSC Selection Criteria: <a href="https://medicine.musc.edu/programs/doctor-medicine/admissions/selection-criteria" target="_blank">https://medicine.musc.edu/programs/doctor-medicine/admissions/selection-criteria</a></li>
+                            <li>USC School of Medicine Greenville Requirements: <a href="https://sc.edu/study/colleges_schools/medicine_greenville/admissions/prepare_for_admission/admissions_requirements/" target="_blank">https://sc.edu/study/colleges_schools/medicine_greenville/admissions/prepare_for_admission/admissions_requirements/</a></li>
+                            <li>USC School of Medicine Columbia MD Program Admissions: <a href="https://sc.edu/study/colleges_schools/medicine/education/md_program/admission_and_application/" target="_blank">https://sc.edu/study/colleges_schools/medicine/education/md_program/admission_and_application/</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 3: THE MCAT -->
+            <section id="page-mcat" class="page-section">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80" alt="MCAT Study Preparation" class="hero-img">
+                    <h2>The MCAT</h2>
+                    <p>The Medical College Admission Test (MCAT) is a standardized, multiple-choice examination designed to assess problem-solving skills, critical thinking, and knowledge of natural, behavioral, and social science concepts prerequisites to medical study.</p>
+
+                    <h3>MCAT Exam Sections:</h3>
+                    <ul>
+                        <li><strong>Biological and Biochemical Foundations of Living Systems</strong></li>
+                        <li><strong>Chemical and Physical Foundations of Biological Systems</strong></li>
+                        <li><strong>Psychological, Social, and Biological Foundations of Behavior</strong></li>
+                        <li><strong>Critical Analysis and Reasoning Skills (CARS)</strong></li>
+                    </ul>
+
+                    <h3>Preparation Overview:</h3>
+                    <p>Most successful applicants dedicate 300–500 hours over several months toward MCAT study. Successful strategies include utilizing official AAMC practice materials, taking timed full-length practice exams, and maintaining a structured study schedule.</p>
+
+                    <div class="footnotes">
+                        <h4>Footnotes & References:</h4>
+                        <ul>
+                            <li>AAMC Official MCAT Preparation: <a href="https://students-residents.aamc.org/prepare-mcat-exam/prepare-mcat-exam" target="_blank">https://students-residents.aamc.org/prepare-mcat-exam/prepare-mcat-exam</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p>&copy; Pre-med Student Portal Dashboard | Designed for South Carolina Undergraduates</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
