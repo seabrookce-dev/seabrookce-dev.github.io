@@ -1,4 +1,4 @@
-let accountBalance = 100;
+let currentBalance = 100;
 const withdrawAmount = 20;
 const depositAmount = 20
 
