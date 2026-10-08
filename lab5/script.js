@@ -10,12 +10,12 @@ function withdraw() {
 
     if(accountBalance > 0)
     {
-        balanceText.innerText = "Account Balance: $" + accountBalance;
+        balanceText.innerText = "$" + accountBalance;
         statusText.innerText = "You've withdrawn $20 from your account!";
     }
     else
     {
-        healthText.innerText = 0;
+        balanceText.innerText = 0;
         statusText.innerText = "OVERDRAFT REACHED";
         statusText.style.color = "#e52611";
         statusText.style.fontWeight = "bold";
