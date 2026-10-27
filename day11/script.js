@@ -32,6 +32,17 @@ function hitTarget()
 {
     score++;     //score = score + 1;
     scoreDisplay.innerText = score;
+    moveTarget();
+}
+
+function moveTarget()
+{
+    let randomX = Math.floor(Math.random() * 550);
+    let randomY = Math.floor(Math.random() * 350);
+
+    targetElement.style.left = randomX + "px";
+    targetElement.style.top = randomY + "px";
+
 }
 
 function endGame()
