@@ -24,6 +24,11 @@ function countdown()
 {
     timeLeft--; //timeLeft = timeLeft - 1;
     timeDisplay.innerText = timeLeft;
+
+    if(timeLeft <= 0)
+    {
+        endGame();
+    }
 }
     
 
