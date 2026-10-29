@@ -4,6 +4,8 @@ let linesOfCode = 0;
 let clickPower = 1;
 let upgradeCost = 50;
 
+let doublePower = 2;
+
 let interns = 0;
 let internCost = 100;
 
@@ -29,7 +31,7 @@ function buyTypewriter()
     if (linesOfCode >= upgradeCost) 
     {
         linesOfCode = linesOfCode - upgradeCost;
-        clickPower = clickPower +1;
+        doublePower = doublePower +2;
         upgradeCost = upgradeCost *1.5;
         updateScreen();    
     }
