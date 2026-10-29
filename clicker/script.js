@@ -1,13 +1,17 @@
 //Creating variables for our code
-let linesOfCode = 0;
+let linesOfCode = 1000;
 
 let clickPower = 1;
 let upgradeCost = 50;
 
 let doublePower = 2;
+let typewriterCost = 100;
 
 let interns = 0;
 let internCost = 100;
+
+let coders = 0;
+let coderCost = 150;
 
 function writeCode() 
 {
@@ -28,11 +32,11 @@ function buyKeyboard()
 
 function buyTypewriter() 
 {
-    if (linesOfCode >= upgradeCost) 
+    if (linesOfCode >= typewriterCost) 
     {
-        linesOfCode = linesOfCode - upgradeCost;
+        linesOfCode = linesOfCode - typewriterCost;
         doublePower = doublePower +2;
-        upgradeCost = upgradeCost *1.5;
+        typewriterCost = typewriterCost *1.5;
         updateScreen();    
     }
 }
@@ -48,6 +52,17 @@ function buyIntern()
     }
 }
 
+function buyCoder()
+{
+    if(linesOfCode >= coderCost)
+    {
+        linesOfCode = linesOfCode - coderCost;
+        coders = coders + 1;
+        coderCost = coderCost *1.5;
+        updateScreen()
+    }
+}
+
 function updateScreen() 
 {
     document.getElementById("score-display").innerText = linesOfCode + "lines of code";
@@ -55,8 +70,15 @@ function updateScreen()
     document.getElementById("power-display").innerText = clickPower;
     document.getElementById("cost-display").innerText = upgradeCost;
 
+    document.getElementById("power-display").innerText = doublePower;
+    document.getElementById("cost-typewriter-display").innerText = typewriterCost;
+
+
     document.getElementById("intern-display").innerText = interns;
     document.getElementById("cost-intern-display").innerText = internCost;
+
+    document.getElementById("coder-display").innerText = coders;
+    document.getElementById("cost-coder-display").innerText = coderCost;
 }
 
 setInterval(function() {
