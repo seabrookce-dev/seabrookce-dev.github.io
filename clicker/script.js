@@ -90,3 +90,13 @@ setInterval(function() {
 }, 
 1000
 );
+
+setInterval(function() {
+    if (coders > 0) 
+    {
+        linesOfCode = linesOfCode + coders;
+        updateScreen();
+    }
+}, 
+1000
+);
