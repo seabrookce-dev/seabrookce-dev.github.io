@@ -24,6 +24,17 @@ function buyKeyboard()
     }
 }
 
+function buyTypewriter() 
+{
+    if (linesOfCode >= upgradeCost) 
+    {
+        linesOfCode = linesOfCode - upgradeCost;
+        clickPower = clickPower +1;
+        upgradeCost = upgradeCost *1.5;
+        updateScreen();    
+    }
+}
+
 function buyIntern()
 {
     if(linesOfCode >= internCost)
