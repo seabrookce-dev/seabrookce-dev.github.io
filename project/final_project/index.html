@@ -1,13 +1,867 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>Med School Application Tracker</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <body>
-        <h1>Med School Application Tracker</h1>
-        <p>Welcome to your application tracker!</p>
-    </body>
+    <title>Med School Application Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- REUSABLE ILLUSTRATIONS -->
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         style="position:absolute;width:0;height:0;"
+         aria-hidden="true">
+
+        <symbol id="medical-art" viewBox="0 0 300 200">
+            <ellipse cx="150" cy="100" rx="140" ry="95"
+                     fill="#EFCFCD"/>
+            <rect x="30" y="143" width="140" height="29"
+                  rx="6" fill="#AD5261"/>
+            <rect x="42" y="113" width="140" height="27"
+                  rx="6" fill="#D7AB77"/>
+            <rect x="52" y="82" width="125" height="28"
+                  rx="6" fill="#FFFFFF"/>
+            <path d="M190 30 V65 Q190 98 218 98
+                     Q246 98 246 65 V30
+                     M218 98 V125 Q218 156 190 156
+                     Q166 156 166 137"
+                  fill="none" stroke="#73000A"
+                  stroke-width="8" stroke-linecap="round"/>
+            <circle cx="166" cy="137" r="11"
+                    fill="#73000A"/>
+            <circle cx="190" cy="30" r="7"
+                    fill="#AD5261"/>
+            <circle cx="246" cy="30" r="7"
+                    fill="#AD5261"/>
+            <path d="M100 32 C83 9 60 37 100 65
+                     C140 37 117 9 100 32Z"
+                  fill="#AD5261"/>
+        </symbol>
+
+        <symbol id="cycle-art" viewBox="0 0 300 200">
+            <ellipse cx="150" cy="100" rx="140" ry="90"
+                     fill="#EFCFCD"/>
+            <path d="M45 155 C200 155 60 45 235 45"
+                  fill="none" stroke="#FFFFFF"
+                  stroke-width="26" stroke-linecap="round"/>
+            <path d="M45 155 C200 155 60 45 235 45"
+                  fill="none" stroke="#AD5261"
+                  stroke-width="3" stroke-dasharray="8 9"/>
+            <circle cx="45" cy="155" r="16"
+                    fill="#73000A"/>
+            <circle cx="142" cy="100" r="14"
+                    fill="#D7AB77"/>
+            <path d="M235 30 C212 5 190 38 235 70
+                     C280 38 258 5 235 30Z"
+                  fill="#73000A"/>
+        </symbol>
+
+        <symbol id="calendar-art" viewBox="0 0 300 200">
+            <ellipse cx="150" cy="100" rx="140" ry="90"
+                     fill="#EFCFCD"/>
+            <rect x="65" y="30" width="170" height="145"
+                  rx="15" fill="#FFFFFF"/>
+            <rect x="65" y="30" width="170" height="42"
+                  rx="12" fill="#73000A"/>
+            <path d="M105 18 V45 M195 18 V45"
+                  stroke="#AD5261" stroke-width="10"
+                  stroke-linecap="round"/>
+            <g fill="#E3EFFB">
+                <rect x="83" y="86" width="30" height="30" rx="5"/>
+                <rect x="135" y="86" width="30" height="30" rx="5"/>
+                <rect x="187" y="86" width="30" height="30" rx="5"/>
+                <rect x="83" y="130" width="30" height="30" rx="5"/>
+                <rect x="187" y="130" width="30" height="30" rx="5"/>
+            </g>
+            <rect x="135" y="130" width="30" height="30"
+                  rx="5" fill="#FFE49B"/>
+        </symbol>
+
+        <symbol id="checklist-art" viewBox="0 0 300 200">
+            <ellipse cx="150" cy="100" rx="140" ry="90"
+                     fill="#EFCFCD"/>
+            <rect x="80" y="20" width="140" height="165"
+                  rx="13" fill="#AD5261"/>
+            <rect x="92" y="35" width="116" height="137"
+                  rx="8" fill="#FFFFFF"/>
+            <rect x="125" y="12" width="50" height="30"
+                  rx="8" fill="#73000A"/>
+            <g stroke="#73000A" stroke-width="6"
+               fill="none" stroke-linecap="round">
+                <path d="M108 70 l9 9 16 -19"/>
+                <path d="M108 110 l9 9 16 -19"/>
+                <path d="M108 147 l9 9 16 -19"/>
+            </g>
+            <path d="M145 72 H185 M145 112 H185 M145 150 H185"
+                  stroke="#D7AB77" stroke-width="7"
+                  stroke-linecap="round"/>
+        </symbol>
+
+        <symbol id="resources-art" viewBox="0 0 300 200">
+            <ellipse cx="150" cy="100" rx="140" ry="90"
+                     fill="#EFCFCD"/>
+            <rect x="42" y="45" width="45" height="130"
+                  rx="7" fill="#73000A"/>
+            <rect x="94" y="65" width="40" height="110"
+                  rx="7" fill="#D7AB77"/>
+            <rect x="141" y="35" width="43" height="140"
+                  rx="7" fill="#AD5261"/>
+            <circle cx="213" cy="80" r="40"
+                    fill="#FFFFFF" stroke="#73000A"
+                    stroke-width="8"/>
+            <path d="M240 110 L273 150"
+                  stroke="#73000A" stroke-width="16"
+                  stroke-linecap="round"/>
+        </symbol>
+
+        <symbol id="tracker-art" viewBox="0 0 300 200">
+            <ellipse cx="150" cy="100" rx="140" ry="90"
+                     fill="#EFCFCD"/>
+            <rect x="65" y="20" width="170" height="135"
+                  rx="12" fill="#73000A"/>
+            <rect x="76" y="32" width="148" height="110"
+                  rx="5" fill="#FFFFFF"/>
+            <path d="M88 125 H210 M88 100 H210 M88 75 H210
+                     M125 50 V125 M165 50 V125"
+                  stroke="#DDC8C8" stroke-width="2"/>
+            <path d="M95 115 L130 90 L165 100 L205 55"
+                  fill="none" stroke="#AD5261"
+                  stroke-width="5"/>
+            <rect x="33" y="155" width="234" height="15"
+                  rx="7" fill="#AD5261"/>
+        </symbol>
+
+    </svg>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <span class="brand-icon">✚</span>
+            <h2>Future MD & DO</h2>
+            <p>Your application companion</p>
+        </div>
+
+        <nav class="nav-menu" aria-label="Main navigation">
+
+            <a href="#home" class="nav-btn active">
+                ⌂ &nbsp; Home
+            </a>
+
+            <a href="#cycle" class="nav-btn">
+                ♡ &nbsp; 2027 Cycle Guide
+            </a>
+
+            <a href="#calendar" class="nav-btn">
+                ▦ &nbsp; Application Calendar
+            </a>
+
+            <a href="#checklist" class="nav-btn">
+                ✓ &nbsp; Application Checklist
+            </a>
+
+            <a href="#resources" class="nav-btn">
+                ↗ &nbsp; Resource Guide
+            </a>
+
+            <a href="#tracker" class="nav-btn">
+                ↓ &nbsp; Personalized Tracker
+            </a>
+
+        </nav>
+
+        <div class="sidebar-info">
+            <strong>One step at a time. ♡</strong>
+            <p>
+                May 2027 – May 2028<br>
+                Fall 2028 entry
+            </p>
+            Your journey is your own.
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-container">
+
+        <header class="header">
+            <div>
+                <span class="eyebrow">THE ROAD TO MEDICINE</span>
+                <h1>Med School Application Tracker</h1>
+            </div>
+            <span class="year-pill">2027–28</span>
+        </header>
+
+        <div class="content">
+
+            <!-- HOME PAGE -->
+
+            <section id="home" class="page-section active">
+
+                <div class="hero">
+
+                    <div>
+                        <span class="eyebrow">YOUR NEXT CHAPTER</span>
+
+                        <h2>Big dreams,<br>small steps.</h2>
+
+                        <p>
+                            Applying to medical school can feel
+                            overwhelming, but it doesn't have to be.
+                            This website brings everything you need
+                            into one organized and approachable space.
+                        </p>
+
+                        <a href="#checklist" class="primary">
+                            Start my checklist →
+                        </a>
+                    </div>
+
+                    <div class="illustration">
+                        <svg role="img"
+                             aria-label="Illustration of books and a stethoscope"
+                             viewBox="0 0 300 200">
+                            <use href="#medical-art"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <h2>Your little wins</h2>
+
+                    <p id="home-progress" aria-live="polite">
+                        Start your application checklist!
+                    </p>
+
+                    <progress id="home-bar"
+                              max="100" value="0"></progress>
+
+                    <p class="muted">
+                        Your progress is automatically saved
+                        in your browser.
+                    </p>
+                </div>
+
+                <div class="tiles">
+
+                    <a href="#cycle" class="card tile">
+                        <span class="eyebrow">01 / LEARN</span>
+                        <h3>Understand the process</h3>
+                        <p>
+                            Learn about applications, interviews
+                            and acceptances.
+                        </p>
+                    </a>
+
+                    <a href="#calendar" class="card tile">
+                        <span class="eyebrow">02 / PLAN</span>
+                        <h3>See the year ahead</h3>
+                        <p>
+                            Keep track of important milestones
+                            and application dates.
+                        </p>
+                    </a>
+
+                    <a href="#resources" class="card tile">
+                        <span class="eyebrow">03 / EXPLORE</span>
+                        <h3>Find support</h3>
+                        <p>
+                            Explore official resources and
+                            ways to reduce application costs.
+                        </p>
+                    </a>
+
+                </div>
+
+                <div class="motivational-banner">
+                    <h2>Every small step counts.</h2>
+                    You don't need to accomplish everything today.
+                </div>
+
+            </section>
+
+            <!-- APPLICATION CYCLE GUIDE -->
+
+            <section id="cycle" class="page-section">
+
+                <div class="hero compact">
+
+                    <div>
+                        <span class="eyebrow">01 / THE PROCESS</span>
+                        <h2>2027 Application Cycle</h2>
+                        <p>
+                            Your guide to applying in 2027
+                            and entering medical school in fall 2028.
+                        </p>
+                    </div>
+
+                    <div class="illustration">
+                        <svg role="img"
+                             aria-label="Illustrated journey"
+                             viewBox="0 0 300 200">
+                            <use href="#cycle-art"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Understanding the application process</h2>
+
+                    <p>
+                        Applications submitted beginning in May 2027
+                        for fall 2028 matriculation are officially
+                        part of the 2028 AMCAS application cycle.
+                    </p>
+
+                    <h3>1. Primary applications</h3>
+
+                    <p>
+                        Most MD programs use the American Medical
+                        College Application Service (AMCAS).
+                        Your primary application contains your
+                        coursework, experiences, personal statement,
+                        MCAT scores and other information.
+                    </p>
+
+                    <p>
+                        Most DO programs use AACOMAS, which follows
+                        a separate application timeline.
+                    </p>
+
+                    <a href="https://students-residents.aamc.org/applying-medical-school-amcas/apply-medical-school-amcas-program">
+                        Explore AMCAS →
+                    </a>
+
+                    <h3>2. Verification</h3>
+
+                    <p>
+                        AMCAS reviews your submitted coursework
+                        against your official transcripts.
+                        Verification can take several weeks,
+                        especially during busy periods.
+                    </p>
+
+                    <h3>3. Secondary applications</h3>
+
+                    <p>
+                        Medical schools may send additional
+                        applications containing school-specific
+                        essays and questions. Secondary fees
+                        and deadlines vary by school.
+                    </p>
+
+                    <h3>4. Interviews</h3>
+
+                    <p>
+                        Interviews commonly occur from late
+                        summer through the winter and spring.
+                        Schools may use traditional interviews,
+                        multiple mini interviews (MMIs), or
+                        a combination of formats.
+                    </p>
+
+                    <h3>5. Admissions decisions</h3>
+
+                    <p>
+                        Depending on the school, applicants
+                        may receive an acceptance, rejection,
+                        waitlist placement or continued review.
+                        Some schools use rolling admissions,
+                        while others release decisions in groups.
+                    </p>
+
+                    <a href="https://students-residents.aamc.org/applying-medical-school/timeline-application-and-admission-medical-school">
+                        Official AAMC application timeline →
+                    </a>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Congratulations! You got in. Now what?</h2>
+
+                    <h3>Holding your seat</h3>
+
+                    <p>
+                        Follow the instructions included in your
+                        acceptance letter. Schools may require
+                        written confirmation, additional forms,
+                        or a deposit to reserve your seat.
+                    </p>
+
+                    <p>
+                        Deposit amounts, refund policies and
+                        response deadlines vary by school.
+                        Record these dates immediately.
+                    </p>
+
+                    <h3>Plan to Enroll (PTE)</h3>
+
+                    <p>
+                        AAMC's Choose Your Medical School tool
+                        typically begins offering Plan to Enroll
+                        in February. This allows applicants
+                        to indicate their current preferred school.
+                    </p>
+
+                    <p>
+                        Before the late-April deadline,
+                        applicants may generally continue holding
+                        other acceptances or waitlist positions,
+                        subject to school-specific policies.
+                    </p>
+
+                    <h3>April 15: Narrow your acceptances</h3>
+
+                    <p>
+                        Under standard AAMC recommendations,
+                        applicants should narrow their acceptances
+                        to no more than three schools by the
+                        April 15 milestone.
+                    </p>
+
+                    <h3>April 30: Choose one acceptance</h3>
+
+                    <p>
+                        Applicants should narrow their acceptances
+                        to one medical school. Applicants who
+                        select Plan to Enroll may generally
+                        remain on other waitlists if permitted.
+                    </p>
+
+                    <h3>Commit to Enroll (CTE)</h3>
+
+                    <p>
+                        Selecting Commit to Enroll means that
+                        you have made your final decision and
+                        must withdraw all other applications,
+                        acceptances and waitlist positions.
+                    </p>
+
+                    <p>
+                        Schools establish their own Commit to
+                        Enroll deadlines, which may extend
+                        into the summer.
+                    </p>
+
+                    <div class="note">
+                        AMCAS selections do not replace
+                        communicating directly with your
+                        medical schools. Confirm the official
+                        2028 dates and your school's policies.
+                    </div>
+
+                    <a href="https://students-residents.aamc.org/applying-medical-school-amcas/application-and-acceptance-protocols-applicants">
+                        AAMC acceptance protocols →
+                    </a>
+
+                    <br><br>
+
+                    <a href="https://students-residents.aamc.org/applying-medical-school-amcas/amcas-choose-your-medical-school-tool">
+                        Choose Your Medical School tool →
+                    </a>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>What if I get waitlisted?</h2>
+
+                    <p>
+                        Waitlist movement can occur throughout
+                        the admissions cycle, particularly
+                        during the spring and summer as
+                        applicants narrow their acceptances.
+                    </p>
+
+                    <ul>
+                        <li>Follow the school's waitlist instructions.</li>
+                        <li>Check your email and applicant portal.</li>
+                        <li>Send updates only if the school permits them.</li>
+                        <li>Keep track of existing acceptance deadlines.</li>
+                        <li>Be prepared to respond quickly to an offer.</li>
+                    </ul>
+
+                    <p>
+                        There is no universal waitlist release date.
+                        Some applicants receive offers shortly
+                        before orientation.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- APPLICATION CALENDAR -->
+
+            <section id="calendar" class="page-section">
+
+                <div class="hero compact">
+
+                    <div>
+                        <span class="eyebrow">02 / THE TIMELINE</span>
+                        <h2>Your year at a glance</h2>
+                        <p>May 2027 – May 2028</p>
+                    </div>
+
+                    <div class="illustration">
+                        <svg role="img"
+                             aria-label="Calendar illustration"
+                             viewBox="0 0 300 200">
+                            <use href="#calendar-art"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Application calendar</h2>
+
+                    <p>
+                        Hover over or tap a highlighted day
+                        to see additional information.
+                    </p>
+
+                    <p>
+                        <span class="legend blue"></span>
+                        Regular day
+                        &nbsp;&nbsp;
+                        <span class="legend yellow"></span>
+                        Milestone or reminder
+                    </p>
+
+                    <div class="note">
+                        <strong>Planning calendar:</strong>
+                        Exact 2028 AMCAS dates have not been
+                        verified as published. Dates shown
+                        are projections, standard protocol
+                        reference dates or suggested reminders.
+                        School-specific deadlines vary.
+                    </div>
+
+                    <a href="https://students-residents.aamc.org/applying-medical-school-amcas/apply-medical-school-amcas-program">
+                        Check official AMCAS updates →
+                    </a>
+
+                </div>
+
+                <!-- JavaScript creates the calendars here -->
+
+                <div id="calendars" class="calendar-grid"></div>
+
+            </section>
+
+            <!-- APPLICATION CHECKLIST -->
+
+            <section id="checklist" class="page-section">
+
+                <div class="hero compact">
+
+                    <div>
+                        <span class="eyebrow">03 / LITTLE WINS</span>
+                        <h2>Your application checklist</h2>
+                        <p>
+                            One task at a time.
+                            Your progress saves automatically.
+                        </p>
+                    </div>
+
+                    <div class="illustration">
+                        <svg role="img"
+                             aria-label="Checklist illustration"
+                             viewBox="0 0 300 200">
+                            <use href="#checklist-art"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Academic benchmarks</h2>
+
+                    <div class="stats">
+
+                        <div class="stat">
+                            <strong>3.81</strong>
+                            <span>Average GPA</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>512.1</strong>
+                            <span>Average MCAT</span>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        These are national 2025 MD matriculant
+                        averages, not minimum requirements.
+                        Each medical school evaluates applicants
+                        differently.
+                    </p>
+
+                    <a href="https://www.aamc.org/data-reports/students-residents/data/facts-applicants-and-matriculants">
+                        Explore official AAMC admissions statistics →
+                    </a>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>My application progress</h2>
+
+                    <p id="check-progress" aria-live="polite"></p>
+
+                    <progress id="check-bar"
+                              max="100" value="0"></progress>
+
+                    <p class="muted">
+                        Checking a course means you have completed
+                        or satisfied that requirement. Always
+                        confirm school-specific prerequisites.
+                    </p>
+
+                </div>
+
+                <!-- JavaScript creates the checklists here -->
+
+                <div id="task-groups" class="tiles"></div>
+
+                <div class="card">
+
+                    <h2>South Carolina & Florida Medical Schools</h2>
+
+                    <p>
+                        Research each school's admissions
+                        requirements, average GPA and MCAT,
+                        residency preferences, prerequisites,
+                        tuition and application deadlines.
+                    </p>
+
+                    <p>
+                        Check off each school after completing
+                        your research.
+                    </p>
+
+                    <label for="school-filter">Filter schools:</label>
+
+                    <select id="school-filter">
+                        <option value="all">All schools</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="FL">Florida</option>
+                        <option value="MD">MD programs</option>
+                        <option value="DO">DO programs</option>
+                    </select>
+
+                    <!-- JavaScript creates school cards here -->
+
+                    <div id="schools" class="school-grid"></div>
+
+                    <br>
+
+                    <a href="https://students-residents.aamc.org/medical-school-admission-requirements/medical-school-admission-requirements-reports-applicants-and-advisors">
+                        Free AAMC medical school admissions reports →
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- RESOURCE GUIDE -->
+
+            <section id="resources" class="page-section">
+
+                <div class="hero compact">
+
+                    <div>
+                        <span class="eyebrow">04 / YOUR TOOLKIT</span>
+                        <h2>Useful resources</h2>
+                        <p>
+                            Reliable information directly
+                            from official admissions organizations.
+                        </p>
+                    </div>
+
+                    <div class="illustration">
+                        <svg role="img"
+                             aria-label="Books and magnifying glass"
+                             viewBox="0 0 300 200">
+                            <use href="#resources-art"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Make applying more affordable</h2>
+
+                    <h3>AAMC Fee Assistance Program</h3>
+
+                    <p>
+                        The AAMC Fee Assistance Program helps
+                        eligible applicants reduce the cost
+                        of preparing for and applying to
+                        medical school.
+                    </p>
+
+                    <h3>Potential benefits</h3>
+
+                    <ul>
+                        <li>Reduced MCAT registration fees</li>
+                        <li>MCAT preparation resources</li>
+                        <li>Access to MSAR</li>
+                        <li>
+                            An AMCAS fee waiver covering
+                            up to 20 school designations
+                            under current program terms
+                        </li>
+                    </ul>
+
+                    <h3>How to apply</h3>
+
+                    <ol>
+                        <li>
+                            Create or sign into your AAMC account.
+                        </li>
+                        <li>
+                            Review the current eligibility
+                            and household income requirements.
+                        </li>
+                        <li>
+                            Complete the Fee Assistance
+                            Program application.
+                        </li>
+                        <li>
+                            Submit the required financial
+                            documentation.
+                        </li>
+                        <li>
+                            Wait for approval before paying
+                            for services covered by the program.
+                        </li>
+                    </ol>
+
+                    <div class="note">
+                        Apply before paying for covered
+                        services. Fee assistance benefits
+                        are generally not retroactive.
+                        Confirm the eligibility and benefits
+                        for your application year.
+                    </div>
+
+                    <a class="primary"
+                       href="https://students-residents.aamc.org/fee-assistance-program/fee-assistance-program">
+                        Explore Fee Assistance →
+                    </a>
+
+                </div>
+
+                <!-- JavaScript creates resource links here -->
+
+                <div id="resource-links" class="tiles"></div>
+
+            </section>
+
+            <!-- PERSONALIZED TRACKER -->
+
+            <section id="tracker" class="page-section">
+
+                <div class="hero compact">
+
+                    <div>
+                        <span class="eyebrow">05 / MAKE IT YOURS</span>
+                        <h2>Your personalized tracker</h2>
+                        <p>
+                            A little organization makes
+                            the application process feel
+                            much more manageable.
+                        </p>
+                    </div>
+
+                    <div class="illustration">
+                        <svg role="img"
+                             aria-label="Application spreadsheet illustration"
+                             viewBox="0 0 300 200">
+                            <use href="#tracker-art"></use>
+                        </svg>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>Personalized Application Tracker</h2>
+
+                    <p>
+                        A downloadable tracker designed to
+                        help you organize your individual
+                        medical school applications.
+                    </p>
+
+                    <h3>Coming soon</h3>
+
+                    <ul>
+                        <li>Personalized medical school list</li>
+                        <li>Prerequisite coursework tracker</li>
+                        <li>Primary and secondary application dates</li>
+                        <li>Application costs and fees</li>
+                        <li>Interview invitations and dates</li>
+                        <li>Acceptances and waitlist status</li>
+                        <li>Enrollment deadlines</li>
+                    </ul>
+
+                    <button class="primary" disabled>
+                        ↓ Download Tracker — Coming Soon
+                    </button>
+
+                </div>
+
+                <div class="motivational-banner">
+                    <h2>Your future is worth the effort.</h2>
+                    Take it one application at a time. ♡
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+            <strong>Med School Application Tracker</strong><br>
+            Created by Claire Seabrook |
+            Web Design and Development using AI Tools
+            <br><br>
+            Independent educational project.
+            Not affiliated with AAMC or any medical school.
+            Always confirm requirements and deadlines directly
+            with the relevant admissions office.
+        </footer>
+
+    </main>
+
+    <noscript>
+        Please enable JavaScript to use the interactive
+        calendars, navigation and checklists.
+    </noscript>
+
+</body>
+
 </html>
